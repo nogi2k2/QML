@@ -16,7 +16,6 @@ Our experimentation is currently in progress, and the results provided/displayed
 
 ---
 
-Key results:  
 ## Quantum Model Results
 
 |     Model     |                 Architecture                         | Test Accuracy  | Train Accuracy |    Convergence Behavior      |
