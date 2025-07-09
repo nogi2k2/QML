@@ -1,6 +1,6 @@
 # QML - Quantum Sequential Modelling Research
 
-This repository documents research conducted on Quantum Recurrent Neural Networks (QRNNs) and related architectures for quantum machine learning applications in sequence modeling tasks, specifically sentiment analysis and POS tagging. The core objective is to explore the feasibility and performance of quantum models relative to classical recurrent architectures, using standardized datasets, controlled training setups, and a trial at building a pure Quantum RNN.
+This repository documents research conducted on Quantum Recurrent Neural Networks (QRNNs) and related architectures for quantum machine learning applications in sequence modeling tasks, specifically sentiment analysis and POS tagging. The core objective is to explore the feasibility and performance of quantum models relative to classical recurrent architectures, using standardized datasets, controlled training setups, and a trial at building a pure Quantum RNN
 
 ---
 
@@ -9,26 +9,31 @@ This repository documents research conducted on Quantum Recurrent Neural Network
 Our experimentation is currently in progress, and the results provided/displayed are only temporary. That said, we have conducted a two-phase experimentation as of now:
 
 1. **Classical DL models for establishing a Baseline**  
-   18 model configurations using various RNN and LSTM based architectures across different dataset splits, embedding strategies, and training setups to establish a reliable performance benchmark.
+   18 model configurations using various RNN and LSTM based architectures across different dataset splits, embedding strategies, and training setups to establish a reliable performance benchmark
    
 2. **Quantum Model Experiments**  
-   Implementation and evaluation of **Quantum RNN** and **Quantum LSTM** cells using Pennylane, with custom quantum circuits designed to handle temporal encoding and prediction in a sequence classification task.
+   Implementation and evaluation of **Quantum RNN** and **Quantum LSTM** cells using Pennylane, with custom quantum circuits designed to handle temporal encoding and prediction in a sequence classification task
 
 ---
 
-## Quantum Model Results
+## Quantum Model Results (Updated)
 
-|     Model     |                 Architecture                         | Test Accuracy  | Train Accuracy |    Convergence Behavior      |
-|---------------|------------------------------------------------------|----------------|----------------|------------------------------|
-| Quantum RNN   | Amplitude + Angle Encoding, 1 QNode per step         |   **46.5%**    |     ~53%       | Stagnated after 10–15 epochs |
-| Quantum LSTM  | Gate-wise QNodes (input, forget, candidate, output)  |   **46.5%**    |     ~53%       | Stagnated after 10–15 epochs |
+|     Model      |             Architecture Description              | Test Accuracy | Train Accuracy |      Convergence Behavior       |
+|----------------|---------------------------------------------------|---------------|----------------|---------------------------------|
+| Quantum RNN v1 | Simple Angle Encoding (1 QNode)                   |     46.5%     |     50.0%      | Stagnated early                 |
+| Quantum RNN v2 | Simple Angle Encoding + 2 Repetitions             |     46.5%     |     50.0%      | No improvement from repetition  |
+| Quantum RNN v3a| Dense Angle Encoding                              |     53.5%     |     51.6%      | Moderate gain                   |
+| Quantum RNN v3b| Dense Angle Encoding + 3 Repetitions              |     53.5%     |     53.5%      | Highest accuracy among QRNNs    |
+| Quantum RNN v4 | Amplitude Encoding                                |     53.5%     |     52.8%      | Stable, expressive performance  |
+| Quantum RNN v5 | Hybrid (Amp + Dense Angle Encoding)               |     52.0%     |     52.0%      | Slight regression               |
+| Quantum LSTM   | Gate-wise QNodes w/ Amplitude + Angle per gate    |     53.5%     |     52.8%      | Most consistent generalization  |
 
 ### Key Observations:
 
-- Both quantum models converged early around **random guess-level performance** (~50%), with little gain through extended training.
-- **Quantum LSTM**, despite being more complex (4 QNodes for each gate per time step), **did not outperform** the simpler Quantum RNN.
-- Low prediction confidence and probability saturation (only 3–5 unique outputs) suggest model convergence failure or vanishing gradient dynamics.
-- **Bias towards the negative class** was observed across confusion matrices.
+- Unlike earlier experiments using 100 training samples, this phase used the **entire dataset**, reducing overfitting
+- All quantum models achieved **generalization above 50%**, with **dense angle encodings** (v3a/v3b) and **Quantum LSTM** performing best
+- **QNode repetition**, when paired with dense encoding, helped improve training stability
+- Quantum LSTM continues to be the **most stable and generalizable QNN**, benefiting from gate-wise separation and hybrid encodings
 
 ---
 
@@ -44,10 +49,10 @@ To establish a meaningful comparison, the following top-performing classical mod
 
 ### Classical Insights:
 
-- **Bidirectional RNNs** achieved the best results, benefiting from forward and backward context awareness.
-- **Manual LSTMs** with class weights and extended training (up to 800 epochs) performed nearly as well.
-- **FastText embeddings** significantly outperformed randomly initialized vectors.
-- Simpler RNNs (e.g., Vanilla RNN) stagnated early and showed poor generalization.
+- **Bidirectional RNNs** achieved the best results, benefiting from forward and backward context awareness
+- **Manual LSTMs** with class weights and extended training (up to 800 epochs) performed nearly as well
+- **FastText embeddings** significantly outperformed randomly initialized vectors
+- Simpler RNNs (e.g., Vanilla RNN) stagnated early and showed poor generalization
 
 ---
 
@@ -55,7 +60,7 @@ To establish a meaningful comparison, the following top-performing classical mod
 
 |         Configuration                     |   Accuracy Range     |
 |-------------------------------------------|----------------------|
-| Quantum RNN / LSTM                        | **46.5%** (stagnant) |
+| Quantum RNN / LSTM                        | **46.5% – 53.5%**    |
 | Classical Bidirectional RNN               | **63.6%** (best)     |
 | Classical Manual LSTM + Class Weights     | ~61.1%               |
 
@@ -63,7 +68,7 @@ To establish a meaningful comparison, the following top-performing classical mod
 
 ## Detailed Reports 
 
-For deeper insights into the model architectures, training statistics:
+For deeper insights into the model architectures and training statistics refer:
 ```
 results/Classical_Report.pdf
 results/Quantum_Report.pdf
