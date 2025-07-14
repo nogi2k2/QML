@@ -74,7 +74,7 @@ For deeper insights into the model architectures and training statistics, refer 
 
 - [Classical Experimentation Report](./Reports/Classical_Report.pdf)
 - [Quantum Experimentation Report](./Reports/Quantum_Report.pdf)
-- [QRNN Adaptation Report](./Reports/QRNN-Adaptation_Report.pdf)
+- [QRNN Adaptation Report](./Reports/Quantum-Adaptation_Report.pdf)
 
 ---
 
