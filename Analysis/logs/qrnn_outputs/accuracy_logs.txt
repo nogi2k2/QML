@@ -1,0 +1,7 @@
+[Model: QRNN_v1]
+Test Accuracy: 0.0750
+Test Loss: 0.6949
+
+[Model: QRNN_v2]
+Test Accuracy: 0.5000
+Test Loss: 0.7597
