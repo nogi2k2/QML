@@ -72,17 +72,17 @@ To establish a meaningful comparison, the following top-performing classical mod
 
 For deeper insights into the model architectures and training statistics, refer to:
 
-- [Classical Experimentation Report](./Results/Classical_Report.pdf)
-- [Quantum Experimentation Report](./Results/Quantum_Report.pdf)
-- [QRNN Adaptation Report](./Results/QRNN-Adaptation_Report.pdf)
+- [Classical Experimentation Report](./Reports/Classical_Report.pdf)
+- [Quantum Experimentation Report](./Reports/Quantum_Report.pdf)
+- [QRNN Adaptation Report](./Reports/QRNN-Adaptation_Report.pdf)
 
 ---
 
 ## Dataset
 
 > **Note:** This repo contains a large file (`Data.zip`) uploaded via Git LFS.  
-> To clone everything correctly:
-> - Run `clone.bat` (requires Git Bash installed), **or**
+> To clone everything follow either:
+> - Run `clone.bat` (requires Git Bash installed)
 > - Manually run `clone.sh` using Bash:  
 >   ```bash
 >   bash clone.sh
