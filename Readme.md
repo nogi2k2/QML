@@ -1,43 +1,45 @@
-# QML - Quantum Sequential Modelling Research
+# QML Research - Sequential Modelling
 
-This repository documents research conducted on Quantum Recurrent Neural Networks (QRNNs) and related architectures for quantum machine learning applications in sequence modeling tasks, specifically sentiment analysis and POS tagging. The core objective is to explore the feasibility and performance of quantum models relative to classical recurrent architectures, using standardized datasets, controlled training setups, and a trial at building a pure Quantum RNN
+This repository documents research conducted on Quantum Recurrent Neural Networks (QRNNs) and related architectures for quantum machine learning applications in sequence modeling tasks, specifically sentiment analysis and POS tagging. The core objective is to explore the feasibility and performance of quantum models relative to classical recurrent architectures, using standardized datasets, controlled training setups, and a trial at building a pure Quantum RNN.
 
 ---
 
 ## Experimental Overview
 
-Our experimentation is currently in progress, and the results provided/displayed are only temporary. That said, we have conducted a two-phase experimentation as of now:
+Our experimentation is currently in progress, and the results provided are only temporary. That said, we have conducted a two-phase experimentation as of now:
 
 1. **Classical DL models for establishing a Baseline**  
-   18 model configurations using various RNN and LSTM based architectures across different dataset splits, embedding strategies, and training setups to establish a reliable performance benchmark
-   
+   18 model configurations using various RNN and LSTM based architectures across different dataset splits, embedding strategies, and training setups to establish a reliable performance benchmark.
+
 2. **Quantum Model Experiments**  
-   Implementation and evaluation of **Quantum RNN** and **Quantum LSTM** cells using Pennylane, with custom quantum circuits designed to handle temporal encoding and prediction in a sequence classification task
+   Implementation and evaluation of **Quantum RNN** and **Quantum LSTM** cells using Pennylane, with custom quantum circuits designed to handle temporal encoding and prediction in a sequence classification task.
 
 ---
 
-## Quantum Model Results (Updated)
+## Quantum Model Results 
 
-|     Model      |             Architecture Description              | Test Accuracy | Train Accuracy |      Convergence Behavior       |
-|----------------|---------------------------------------------------|---------------|----------------|---------------------------------|
-| Quantum RNN v1 | Simple Angle Encoding (1 QNode)                   |     46.5%     |     50.0%      | Stagnated early                 |
-| Quantum RNN v2 | Simple Angle Encoding + 2 Repetitions             |     46.5%     |     50.0%      | No improvement from repetition  |
-| Quantum RNN v3a| Dense Angle Encoding                              |     53.5%     |     51.6%      | Moderate gain                   |
-| Quantum RNN v3b| Dense Angle Encoding + 3 Repetitions              |     53.5%     |     53.5%      | Highest accuracy among QRNNs    |
-| Quantum RNN v4 | Amplitude Encoding                                |     53.5%     |     52.8%      | Stable, expressive performance  |
-| Quantum RNN v5 | Hybrid (Amp + Dense Angle Encoding)               |     52.0%     |     52.0%      | Slight regression               |
-| Quantum LSTM   | Gate-wise QNodes w/ Amplitude + Angle per gate    |     53.5%     |     52.8%      | Most consistent generalization  |
+|     Model       |             Architecture Description                        | Test Accuracy | Train Accuracy |      Convergence Behavior       |
+|-----------------|-------------------------------------------------------------|---------------|----------------|---------------------------------|
+| Quantum RNN v1  | Simple Angle Encoding (1 QNode)                             |     46.5%     |     50.0%      | Stagnated early                 |
+| Quantum RNN v2  | Simple Angle Encoding + 2 Repetitions                       |     46.5%     |     50.0%      | No improvement from repetition  |
+| Quantum RNN v3a | Dense Angle Encoding                                        |     53.5%     |     51.6%      | Moderate gain                   |
+| Quantum RNN v3b | Dense Angle Encoding + 3 Repetitions                        |     53.5%     |     53.5%      | Highest accuracy among QRNNs    |
+| Quantum RNN v4  | Amplitude Encoding                                          |     53.5%     |     52.8%      | Stable, expressive performance  |
+| Quantum RNN v5  | Hybrid (Amp + Dense Angle Encoding)                         |     52.0%     |     52.0%      | Slight regression               |
+| Quantum LSTM    | Gate-wise QNodes w/ Amplitude + Angle per gate              |     53.5%     |     52.8%      | Most consistent generalization  |
+| **QRNN Adapted**| Dense Angle Encoding, 8D AE input, 2 outputs, CE loss       |  **50.1%**    |    **50.1%**   | Faster, stable but underfit     |
 
 ### Key Observations:
 
-- Unlike earlier experiments using 100 training samples, this phase used the **entire dataset**, reducing overfitting
-- All quantum models achieved **generalization above 50%**, with **dense angle encodings** (v3a/v3b) and **Quantum LSTM** performing best
-- **QNode repetition**, when paired with dense encoding, helped improve training stability
-- Quantum LSTM continues to be the **most stable and generalizable QNN**, benefiting from gate-wise separation and hybrid encodings
+- Introduced **Autoencoder** for dimensionality reduction (vs PCA)
+- Used **8D embeddings** over 32D → improved training time & inference speed
+- Returned **2 PauliZ outputs** → softmax → cross-entropy
+- Accuracy plateaued at ~50.12% — indicating underfitting
+- Set foundation for the next iteration of Quantum-RNN, which will include stacked layers and interlayer interaction
 
 ---
 
-## Classical Baseline Results
+## Baseline Results (Classical)
 
 To establish a meaningful comparison, the following top-performing classical models were evaluated:
 
@@ -56,7 +58,7 @@ To establish a meaningful comparison, the following top-performing classical mod
 
 ---
 
-## Quantum vs Classical: Performance Summary
+## Performance Summary: Quantum vs Classical
 
 |         Configuration                     |   Accuracy Range     |
 |-------------------------------------------|----------------------|
@@ -66,10 +68,24 @@ To establish a meaningful comparison, the following top-performing classical mod
 
 ---
 
-## Detailed Reports 
+## 📄 Experimentation Reports
 
-For deeper insights into the model architectures and training statistics refer:
-```
-results/Classical_Report.pdf
-results/Quantum_Report.pdf
-```
+For deeper insights into the model architectures and training statistics, refer to:
+
+- [Classical Experimentation Report](./Results/Classical_Report.pdf)
+- [Quantum Experimentation Report](./Results/Quantum_Report.pdf)
+- [QRNN Adaptation Report](./Results/QRNN-Adaptation_Report.pdf)
+
+---
+
+## Dataset
+
+> **Note:** This repo contains a large file (`Data.zip`) uploaded via Git LFS.  
+> To clone everything correctly:
+> - Run `clone.bat` (requires Git Bash installed), **or**
+> - Manually run `clone.sh` using Bash:  
+>   ```bash
+>   bash clone.sh
+>   ```
+
+---
