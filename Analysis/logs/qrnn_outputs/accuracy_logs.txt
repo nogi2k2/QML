@@ -5,3 +5,52 @@ Test Loss: 0.6949
 [Model: QRNN_v2]
 Test Accuracy: 0.5000
 Test Loss: 0.7597
+
+[Model: QRNN_v3]
+Test Accuracy: 0.4200
+Test Loss: 0.7374
+
+[Model: QRNN_v4]
+Test Accuracy: 0.4700
+Test Loss: 0.7237
+
+[Model: QRNN_v5]
+Test Accuracy: 0.5300
+Test Loss: 0.6993
+
+[Model: QRNN_v5]
+Test Accuracy: 0.5550
+Test Loss: 0.6821
+
+[Model: QRNN_v5]
+Test Accuracy: 0.5650
+Test Loss: 0.6858
+
+[Model: QRNN_v7]
+Test Accuracy: 0.5450
+Test Loss: 0.6892
+
+[Model: Stacked_QRNN_v1]
+Test Accuracy: 0.5600
+Test Loss: 0.6826
+
+[Model: Stacked_QRNN_v2]
+Test Accuracy: 0.5550
+Test Loss: 0.6989
+
+[Model: Stacked_QRNN_v3]
+Test Accuracy: 0.5450
+Test Loss: 0.6827
+
+[Model: Stacked_QRNN_v4]
+Test Accuracy: 0.5600
+Test Loss: 0.6819
+
+[Model: Stacked_QRNN_v5]
+Test Accuracy: 0.5500
+Test Loss: 0.6859
+
+[Model: Stacked_QRNN_v6]
+Test Accuracy: 0.5650
+Test Loss: 0.6794
+
