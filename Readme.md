@@ -68,13 +68,14 @@ To establish a meaningful comparison, the following top-performing classical mod
 
 ---
 
-## 📄 Experimentation Reports
+## Experimentation Reports
 
 For deeper insights into the model architectures and training statistics, refer to:
 
-- [Classical Experimentation Report](./Reports/Classical_Report.pdf)
-- [Quantum Experimentation Report](./Reports/Quantum_Report.pdf)
-- [QRNN Adaptation Report](./Reports/Quantum-Adaptation_Report.pdf)
+- [Classical Experimentation Report](./Reports/Classical/Classical_Report.pdf)
+- [Quantum Phase 1 Report](./Reports/Quantum/Quantum_Report_1.pdf)
+- [Quantum Phase 2 Report](./Reports/Quantum/Quantum_Report_2.pdf)
+- [Quantum Phase 3 Report](./Reports/Quantum/Quantum_Report_3.pdf)
 
 ---
 
