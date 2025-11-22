@@ -1,0 +1,2404 @@
+experiments:
+- run_id: yelp_rnn_basic_adam
+  dataset: yelp
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_rnn_basic_sgd
+  dataset: yelp
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_rnn_basic_rmsprop
+  dataset: yelp
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_rnn_word2vec_adam
+  dataset: yelp
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_rnn_word2vec_sgd
+  dataset: yelp
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_rnn_word2vec_rmsprop
+  dataset: yelp
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_rnn_bert_adam
+  dataset: yelp
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: rnn
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_rnn_bert_sgd
+  dataset: yelp
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: rnn
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_rnn_bert_rmsprop
+  dataset: yelp
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: rnn
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_lstm_basic_adam
+  dataset: yelp
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_lstm_basic_sgd
+  dataset: yelp
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_lstm_basic_rmsprop
+  dataset: yelp
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_lstm_word2vec_adam
+  dataset: yelp
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_lstm_word2vec_sgd
+  dataset: yelp
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_lstm_word2vec_rmsprop
+  dataset: yelp
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_lstm_bert_adam
+  dataset: yelp
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: lstm
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_lstm_bert_sgd
+  dataset: yelp
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: lstm
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_lstm_bert_rmsprop
+  dataset: yelp
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: lstm
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_gru_basic_adam
+  dataset: yelp
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_gru_basic_sgd
+  dataset: yelp
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_gru_basic_rmsprop
+  dataset: yelp
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_gru_word2vec_adam
+  dataset: yelp
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_gru_word2vec_sgd
+  dataset: yelp
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_gru_word2vec_rmsprop
+  dataset: yelp
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_gru_bert_adam
+  dataset: yelp
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: gru
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_gru_bert_sgd
+  dataset: yelp
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: gru
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_gru_bert_rmsprop
+  dataset: yelp
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: gru
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_transformer_basic_adam
+  dataset: yelp
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: transformer
+    num_heads: 4
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_transformer_basic_sgd
+  dataset: yelp
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: transformer
+    num_heads: 4
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_transformer_basic_rmsprop
+  dataset: yelp
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: transformer
+    num_heads: 4
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_transformer_word2vec_adam
+  dataset: yelp
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: transformer
+    num_heads: 5
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_transformer_word2vec_sgd
+  dataset: yelp
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: transformer
+    num_heads: 5
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_transformer_word2vec_rmsprop
+  dataset: yelp
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: transformer
+    num_heads: 5
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_transformer_bert_adam
+  dataset: yelp
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: transformer
+    num_heads: 8
+    num_layers: 2
+    ff_dim: 1024
+    dropout: 0.1
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 16
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_transformer_bert_sgd
+  dataset: yelp
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: transformer
+    num_heads: 8
+    num_layers: 2
+    ff_dim: 1024
+    dropout: 0.1
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 16
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: yelp_transformer_bert_rmsprop
+  dataset: yelp
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: transformer
+    num_heads: 8
+    num_layers: 2
+    ff_dim: 1024
+    dropout: 0.1
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 16
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_rnn_basic_adam
+  dataset: imdb
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_rnn_basic_sgd
+  dataset: imdb
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_rnn_basic_rmsprop
+  dataset: imdb
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_rnn_word2vec_adam
+  dataset: imdb
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_rnn_word2vec_sgd
+  dataset: imdb
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_rnn_word2vec_rmsprop
+  dataset: imdb
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_rnn_bert_adam
+  dataset: imdb
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: rnn
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_rnn_bert_sgd
+  dataset: imdb
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: rnn
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_rnn_bert_rmsprop
+  dataset: imdb
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: rnn
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_lstm_basic_adam
+  dataset: imdb
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_lstm_basic_sgd
+  dataset: imdb
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_lstm_basic_rmsprop
+  dataset: imdb
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_lstm_word2vec_adam
+  dataset: imdb
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_lstm_word2vec_sgd
+  dataset: imdb
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_lstm_word2vec_rmsprop
+  dataset: imdb
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_lstm_bert_adam
+  dataset: imdb
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: lstm
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_lstm_bert_sgd
+  dataset: imdb
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: lstm
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_lstm_bert_rmsprop
+  dataset: imdb
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: lstm
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_gru_basic_adam
+  dataset: imdb
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_gru_basic_sgd
+  dataset: imdb
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_gru_basic_rmsprop
+  dataset: imdb
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_gru_word2vec_adam
+  dataset: imdb
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_gru_word2vec_sgd
+  dataset: imdb
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_gru_word2vec_rmsprop
+  dataset: imdb
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_gru_bert_adam
+  dataset: imdb
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: gru
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_gru_bert_sgd
+  dataset: imdb
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: gru
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_gru_bert_rmsprop
+  dataset: imdb
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: gru
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_transformer_basic_adam
+  dataset: imdb
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: transformer
+    num_heads: 4
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_transformer_basic_sgd
+  dataset: imdb
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: transformer
+    num_heads: 4
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_transformer_basic_rmsprop
+  dataset: imdb
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: transformer
+    num_heads: 4
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_transformer_word2vec_adam
+  dataset: imdb
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: transformer
+    num_heads: 5
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_transformer_word2vec_sgd
+  dataset: imdb
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: transformer
+    num_heads: 5
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_transformer_word2vec_rmsprop
+  dataset: imdb
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: transformer
+    num_heads: 5
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_transformer_bert_adam
+  dataset: imdb
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: transformer
+    num_heads: 8
+    num_layers: 2
+    ff_dim: 1024
+    dropout: 0.1
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 16
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_transformer_bert_sgd
+  dataset: imdb
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: transformer
+    num_heads: 8
+    num_layers: 2
+    ff_dim: 1024
+    dropout: 0.1
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 16
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: imdb_transformer_bert_rmsprop
+  dataset: imdb
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: transformer
+    num_heads: 8
+    num_layers: 2
+    ff_dim: 1024
+    dropout: 0.1
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 16
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_rnn_basic_adam
+  dataset: amazon
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_rnn_basic_sgd
+  dataset: amazon
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_rnn_basic_rmsprop
+  dataset: amazon
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_rnn_word2vec_adam
+  dataset: amazon
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_rnn_word2vec_sgd
+  dataset: amazon
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_rnn_word2vec_rmsprop
+  dataset: amazon
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: rnn
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_rnn_bert_adam
+  dataset: amazon
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: rnn
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_rnn_bert_sgd
+  dataset: amazon
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: rnn
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_rnn_bert_rmsprop
+  dataset: amazon
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: rnn
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_lstm_basic_adam
+  dataset: amazon
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_lstm_basic_sgd
+  dataset: amazon
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_lstm_basic_rmsprop
+  dataset: amazon
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_lstm_word2vec_adam
+  dataset: amazon
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_lstm_word2vec_sgd
+  dataset: amazon
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_lstm_word2vec_rmsprop
+  dataset: amazon
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: lstm
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_lstm_bert_adam
+  dataset: amazon
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: lstm
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_lstm_bert_sgd
+  dataset: amazon
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: lstm
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_lstm_bert_rmsprop
+  dataset: amazon
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: lstm
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_gru_basic_adam
+  dataset: amazon
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_gru_basic_sgd
+  dataset: amazon
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_gru_basic_rmsprop
+  dataset: amazon
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_gru_word2vec_adam
+  dataset: amazon
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_gru_word2vec_sgd
+  dataset: amazon
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_gru_word2vec_rmsprop
+  dataset: amazon
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: gru
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 64
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_gru_bert_adam
+  dataset: amazon
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: gru
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_gru_bert_sgd
+  dataset: amazon
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: gru
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_gru_bert_rmsprop
+  dataset: amazon
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: gru
+    hidden_size: 768
+    num_layers: 1
+    dropout: 0.3
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_transformer_basic_adam
+  dataset: amazon
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: transformer
+    num_heads: 4
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_transformer_basic_sgd
+  dataset: amazon
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: transformer
+    num_heads: 4
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_transformer_basic_rmsprop
+  dataset: amazon
+  embedding:
+    name: basic
+    embed_dim: 128
+  model:
+    name: transformer
+    num_heads: 4
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_transformer_word2vec_adam
+  dataset: amazon
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: transformer
+    num_heads: 5
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_transformer_word2vec_sgd
+  dataset: amazon
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: transformer
+    num_heads: 5
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.01
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_transformer_word2vec_rmsprop
+  dataset: amazon
+  embedding:
+    name: word2vec
+    embed_dim: 300
+  model:
+    name: transformer
+    num_heads: 5
+    num_layers: 2
+    ff_dim: 512
+    dropout: 0.1
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 32
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_transformer_bert_adam
+  dataset: amazon
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: transformer
+    num_heads: 8
+    num_layers: 2
+    ff_dim: 1024
+    dropout: 0.1
+  training:
+    optimizer: Adam
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 16
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_transformer_bert_sgd
+  dataset: amazon
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: transformer
+    num_heads: 8
+    num_layers: 2
+    ff_dim: 1024
+    dropout: 0.1
+  training:
+    optimizer: SGD
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 16
+    learning_rate: 0.001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
+- run_id: amazon_transformer_bert_rmsprop
+  dataset: amazon
+  embedding:
+    name: bert
+    model_name: distilbert-base-uncased
+  model:
+    name: transformer
+    num_heads: 8
+    num_layers: 2
+    ff_dim: 1024
+    dropout: 0.1
+  training:
+    optimizer: RMSprop
+    loss_fn: BCEWithLogitsLoss
+    epochs: 30
+    batch_size: 16
+    learning_rate: 0.0001
+    scheduler:
+      patience: 2
+      factor: 0.1
+    early_stopping:
+      patience: 5
+      min_delta: 0.001
