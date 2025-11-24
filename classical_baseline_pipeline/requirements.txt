@@ -1,0 +1,10 @@
+torch
+pandas
+spacy==3.7.5
+transformers
+gensim
+scikit-learn
+PyYAML
+tqdm
+
+# !python -m spacy download en_core_web_sm
