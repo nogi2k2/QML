@@ -1,4 +1,0 @@
-Samuel - https://github.com/ycchen1989/Quantum_Long_Short_Term_Memory
-
-QLSTM (Hybrid) - https://github.com/DikshantDulal/SoftServe_QLSTM (DikshantDulal)
-QLSTM (Hybrid) - https://github.com/rdisipio/qlstm (rdisipio)
